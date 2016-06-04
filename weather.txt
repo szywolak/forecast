@@ -1,0 +1,52 @@
+package com.weather;
+
+import com.eclipsesource.json.JsonObject;
+import com.eclipsesource.json.JsonValue;
+import com.github.dvdme.ForecastIOLib.ForecastIO;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by szymon.wolak on 2016-05-27.
+ */
+public class Weather {
+    public void getWeather(){
+        ForecastIO fio = new ForecastIO("afa3723b72070e1425fe75005493ec93"); //instantiate the class with the API key.
+        fio.setUnits(ForecastIO.UNITS_SI);             //sets the units as SI - optional
+        fio.setExcludeURL("minutely");             //excluded the minutely and hourly reports from the reply
+        fio.getForecast("52.229676", "21.012228999999934");
+
+        System.out.println(fio.getCurrently());
+        JsonObject weather  = fio.getCurrently();
+
+
+        Map<String, JsonValue> weatherValues = getStringJsonValueMap(weather);
+
+
+        System.out.println(getStringJsonValueMap(weather));
+    }
+
+    private Map<String, JsonValue> getStringJsonValueMap(JsonObject weather) {
+        Map<String, JsonValue> weatherValues = new HashMap<>();
+        weatherValues.put("Summary", weather.get("summary"));
+        weatherValues.put("PrecipIntensity", weather.get("precipIntensity"));
+        weatherValues.put("PrecipProbability", weather.get("precipProbability"));
+        weatherValues.put("PrecipType", weather.get("precipType"));
+        weatherValues.put("ApparentTemperature", weather.get("apparentTemperature"));
+        weatherValues.put("DewPoint", weather.get("dewPoint"));
+        weatherValues.put("Humidity", weather.get("humidity"));
+        weatherValues.put("WindSpeed", weather.get("windSpeed"));
+        weatherValues.put("WindBearing", weather.get("windBearing"));
+        weatherValues.put("CloudCover", weather.get("cloudCover"));
+        weatherValues.put("Pressure", weather.get("pressure"));
+        weatherValues.put("Ozone", weather.get("ozone"));
+        return weatherValues;
+    }
+
+
+    public static void main(String[] args) {
+            Weather ab = new Weather();
+            ab.getWeather();
+        }
+    }

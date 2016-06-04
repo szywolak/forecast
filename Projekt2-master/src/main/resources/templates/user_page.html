@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+</head>
+<body>
+<p th:text="'Hello, ' + ${name} + '!'" />
+<p th:text="'Hello, ' + ${ands} + '!'" />
+<th th:text="${name}">Date Planted</th>
+<div class="container">
+    <h1 style="text-align: center;">Welcome "user"!</h1>
+    <p style="text-align: center;">For your location: cord1, cord2</p>
+    <table class="table" style="margin-top: 150px;">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Login</th>
+            <th>Summary</th>
+            <th>Precip intensity</th>
+            <th>Precip probability</th>
+            <th>Temperature</th>
+            <th>Apparent Temperature</th>
+            <th>Dew point</th>
+            <th>Humidity</th>
+            <th>Wind speed</th>
+            <th>Wind Bearing</th>
+            <th>Visibility</th>
+            <th>Cloud cover</th>
+            <th>Pressure</th>
+            <th>Ozone</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="success">
+            <td>"${name}"</td>
+            <td><th th:text="${name}">Date Planted</th></td>
+            <td>Doe</td>
+            <td>Doe</td>
+            <td>Doe</td>
+            <td>Doe</td>
+            <td>Doe</td>
+            <td>Doe</td>
+            <td>Doe</td>
+            <td>Doe</td>
+            <td>Doe</td>
+            <td>Doe</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td>john@example.com</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

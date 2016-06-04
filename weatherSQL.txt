@@ -1,0 +1,9 @@
+create table weather (user_id INT, date VARCHAR(255),summary VARCHAR(255),precipIntensity VARCHAR(255),precipProbability VARCHAR(255),precipType VARCHAR(255),temperature VARCHAR(255),apparentTemperature VARCHAR(255),dewPoint VARCHAR(255),humidity VARCHAR(255),windSpeed VARCHAR(255),windBearing VARCHAR(255),visibility VARCHAR(255),cloudCover VARCHAR(255),pressure VARCHAR(255),ozone VARCHAR(255));
+
+
+INSERT INTO weather (user_id,date,summary,precipIntensity,precipProbability,precipType,temperature,apparentTemperature,dewPoint,humidity,windSpeed,windBearing,visibility,cloudCover,pressure,ozone) VALUES (1,'28-05-2016','Clear','0.033','0.02','rain','26.79','27','14.12','0.46','3.27','131','9.99','0.09','1015.23','354.23');
+
+
+
+
+1,'28-05-2016','Clear','0.033','0.02','rain','26.79','27','14.12','0.46','3.27','131','9.99','0.09','1015.23','354.23'
