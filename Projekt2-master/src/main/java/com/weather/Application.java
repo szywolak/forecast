@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-@ComponentScan
-@EnableAutoConfiguration
-@EnableScheduling
+//@ComponentScan
+//@EnableAutoConfiguration
+//@EnableScheduling
 @SpringBootApplication
 public class Application {
 

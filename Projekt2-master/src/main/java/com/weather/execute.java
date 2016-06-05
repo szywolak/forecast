@@ -17,7 +17,7 @@ public class execute {
 
     public static void main(String[] args) throws IOException {
         runSaveToDatabase();
-       // selectFrom("User01");
+        // selectFrom("User01");
     }
 
     /**
@@ -49,7 +49,8 @@ public class execute {
      * @param login
      * @return weatherEntities
      */
-    public List selectFrom(String login) throws IOException {
+
+    public List<WeatherEntity> selectFrom(String login) throws IOException {
 
 
         SessionFactory sessionFactory = new Configuration().configure("/hibernate.cfg.xml").buildSessionFactory();
@@ -63,13 +64,13 @@ public class execute {
 
 
 
-            ObjectMapper mapper = new ObjectMapper();
+        ObjectMapper mapper = new ObjectMapper();
 
-            String path = String.format("user_reports/%s.json", login);
-            mapper.writeValue(new File(path), weatherEntities);
+        String path = String.format("user_reports/%s.json", login);
+        mapper.writeValue(new File(path), weatherEntities);
 
-            String jsonInString = mapper.writeValueAsString(weatherEntities);
-            System.out.println("********");
+        String jsonInString = mapper.writeValueAsString(weatherEntities);
+        System.out.println("********");
         return weatherEntities;
     }
 }
