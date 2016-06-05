@@ -20,6 +20,10 @@ public class execute {
        // selectFrom("User01");
     }
 
+    /**
+     * This is the method which is saving data to database.
+     * This method is using Hibernate Framework.
+     */
     public static void runSaveToDatabase() {
         SessionFactory sessionFactory = new Configuration().configure("/hibernate.cfg.xml").buildSessionFactory();
 
@@ -39,6 +43,12 @@ public class execute {
         session.close();
     }
 
+    /**
+     * This is the method which is selecting data from database for particular user and saving data into weather entities.
+     * This method is using Hibernate Framework.
+     * @param login
+     * @return weatherEntities
+     */
     public List selectFrom(String login) throws IOException {
 
 

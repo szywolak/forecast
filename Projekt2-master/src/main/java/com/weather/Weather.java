@@ -11,6 +11,11 @@ import java.util.Date;
 public class Weather {
 
 
+    /**
+     * This is the method which is connecting to API and downloading the current weather for selected place.
+     * We are choosing place by providing the Coordinates.
+     * @return generatedWeather
+     */
     public JsonObject getWeather(){
         ForecastIO fio = new ForecastIO("afa3723b72070e1425fe75005493ec93"); //instantiate the class with the API key.
         fio.setUnits(ForecastIO.UNITS_SI);             //sets the units as SI - optional
@@ -27,6 +32,13 @@ public class Weather {
         return generatedWeather;
     }
 
+
+    /**
+     * This is the method which is filling entities with downloaded data.
+     * @param generatedWeather
+     * @param weatherEntity
+     * @return weatherEntity
+     */
     public WeatherEntity fillFieldsForDB(JsonObject generatedWeather, WeatherEntity weatherEntity) {
         Date data = new Date();
         String currentData = data.toString();
